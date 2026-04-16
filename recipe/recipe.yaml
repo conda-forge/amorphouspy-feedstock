@@ -52,7 +52,10 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - python ${{ python_min }}.*
       run:
+        - python >=${{ python_min }}
         - ${{ pin_subpackage("amorphouspy", exact=true) }}
         - executorlib
         - pysqa
