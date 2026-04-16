@@ -27,12 +27,13 @@ requirements:
     - ase
     - numba
     - pandas
+    - pydantic
     - lammpsparser
     - networkx
-    - pydantic
     - pymatgen
-    - scikit-image
+    - pymcubes
     - scipy
+    - lammps==2024.08.29
 
 tests:
   - python:
