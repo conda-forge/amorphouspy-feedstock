@@ -36,6 +36,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-amorphouspy-green.svg)](https://anaconda.org/conda-forge/amorphouspy) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/amorphouspy.svg)](https://anaconda.org/conda-forge/amorphouspy) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/amorphouspy.svg)](https://anaconda.org/conda-forge/amorphouspy) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/amorphouspy.svg)](https://anaconda.org/conda-forge/amorphouspy) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-amorphouspy--api-green.svg)](https://anaconda.org/conda-forge/amorphouspy-api) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/amorphouspy-api.svg)](https://anaconda.org/conda-forge/amorphouspy-api) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/amorphouspy-api.svg)](https://anaconda.org/conda-forge/amorphouspy-api) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/amorphouspy-api.svg)](https://anaconda.org/conda-forge/amorphouspy-api) |
 
 Installing amorphouspy
 ======================
@@ -47,16 +48,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `amorphouspy` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `amorphouspy, amorphouspy-api` can be installed with `conda`:
 
 ```
-conda install amorphouspy
+conda install amorphouspy amorphouspy-api
 ```
 
 or with `mamba`:
 
 ```
-mamba install amorphouspy
+mamba install amorphouspy amorphouspy-api
 ```
 
 It is possible to list all of the versions of `amorphouspy` available on your platform with `conda`:
