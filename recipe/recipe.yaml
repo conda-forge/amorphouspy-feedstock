@@ -33,7 +33,7 @@ requirements:
     - pymatgen
     - pymcubes
     - scipy
-    - lammps==2024.08.29
+    - lammps ==2024.08.29
 
 tests:
   - python:
