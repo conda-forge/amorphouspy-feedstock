@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.5.3"
+  version: "0.5.7"
   python_min: "3.12"
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/amorphouspy/amorphouspy-${{ version }}.tar.gz
-  sha256: da26728631ecdc8503ca0fddd9b2e5c20e10eaefea5e7bea3c55ae1c874be984
+  sha256: ac2c84c78bd5e435d60cd315e1c42aba9d4676db2b620af900c6fca7508a0a09
 
 build:
   number: 0
@@ -27,12 +27,13 @@ requirements:
     - ase
     - numba
     - pandas
+    - pydantic
     - lammpsparser
     - networkx
-    - pydantic
     - pymatgen
-    - scikit-image
+    - pymcubes
     - scipy
+    - lammps ==2024.08.29
 
 tests:
   - python:
