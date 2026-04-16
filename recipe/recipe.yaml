@@ -4,7 +4,7 @@ context:
   version: "0.5.7"
   python_min: "3.12"
 
-package:
+recipe:
   name: amorphouspy
   version: ${{ version }}
 
@@ -13,35 +13,64 @@ source:
   sha256: ac2c84c78bd5e435d60cd315e1c42aba9d4676db2b620af900c6fca7508a0a09
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: python -m pip install . -vv --no-deps --no-build-isolation
 
-requirements:
-  host:
-    - python ${{ python_min }}.*
-    - pip
-    - hatchling >=1.21
-  run:
-    - python >=${{ python_min }}
-    - ase
-    - numba
-    - pandas
-    - pydantic
-    - lammpsparser
-    - networkx
-    - pymatgen
-    - pymcubes
-    - scipy
-    - lammps ==2024.08.29
+outputs:
+  - package:
+      name: amorphouspy
+    build:
+      noarch: python
+      script: python -m pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - pip
+        - hatchling >=1.21
+      run:
+        - python >=${{ python_min }}
+        - ase
+        - numba
+        - pandas
+        - pydantic
+        - lammpsparser
+        - networkx
+        - pymatgen
+        - pymcubes
+        - scipy
+        - lammps ==2024.08.29
+    tests:
+      - python:
+          imports:
+            - amorphouspy
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
 
-tests:
-  - python:
-      imports:
-        - amorphouspy
-      python_version:
-        - ${{ python_min }}.*
-        - "*"
+  - package:
+      name: amorphouspy-api
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+      run:
+        - python >=${{ python_min }}
+        - ${{ pin_subpackage("amorphouspy", exact=true) }}
+        - executorlib
+        - pysqa
+        - uvicorn
+        - fastapi
+        - mcp >=1.6.0
+        - sqlalchemy
+        - jinja2
+    tests:
+      - python:
+          imports:
+            - amorphouspy_api
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
 
 about:
   homepage: https://github.com/glasagent/amorphouspy
