@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.5.7"
+  version: "0.6.0"
   python_min: "3.12"
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/amorphouspy/amorphouspy-${{ version }}.tar.gz
-  sha256: ac2c84c78bd5e435d60cd315e1c42aba9d4676db2b620af900c6fca7508a0a09
+  sha256: f7cf143aa9e03fc9b9393261c661c2ad45a7d91de003c0232c556217e1e3cba1
 
 build:
   number: 0
