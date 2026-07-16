@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.6.0"
+  version: "0.8.1"
   python_min: "3.12"
 
 recipe:
@@ -10,10 +10,10 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/a/amorphouspy/amorphouspy-${{ version }}.tar.gz
-  sha256: f7cf143aa9e03fc9b9393261c661c2ad45a7d91de003c0232c556217e1e3cba1
+  sha256: 392856cd3e074c8e25cf733db45df54d4052edb02a809c936540ead4ca3d022a
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 outputs:
@@ -30,15 +30,17 @@ outputs:
       run:
         - python >=${{ python_min }}
         - ase
+        - jupyter
+        - lammps ==2024.08.29
+        - lammpsparser >=0.0.7
         - numba
+        - numpy
         - pandas
         - pydantic
-        - lammpsparser
-        - networkx
         - pymatgen
-        - pymcubes
         - scipy
-        - lammps ==2024.08.29
+        - networkx
+        - pymcubes 
     tests:
       - python:
           imports:
@@ -57,13 +59,15 @@ outputs:
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage("amorphouspy", exact=true) }}
-        - executorlib
+        - executorlib >=1.10
+        - h5py
         - pysqa
+        - sqlalchemy
         - uvicorn
+        - jinja2
         - fastapi
         - mcp >=1.6.0
-        - sqlalchemy
-        - jinja2
+        - flux-core >=0.81.0
     tests:
       - python:
           imports:
