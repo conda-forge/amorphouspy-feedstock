@@ -36,6 +36,7 @@ outputs:
         - numba
         - numpy
         - pandas
+        - pydantic
         - pymatgen
         - scipy
         - networkx
